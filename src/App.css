@@ -154,3 +154,165 @@ html[dir=rtl] .review article{animation-name:reviewInRtl}@keyframes reviewInRtl{
 
 @media(max-width:720px){.site-footer .footer-column h3{font-size:19px!important}.site-footer .footer-column button,.site-footer .footer-column a,.site-footer .footer-column span,.site-footer .footer-brand p,.site-footer .footer-download p{font-size:14px!important}.site-footer .payment-badge{min-width:86px!important;height:46px!important}.site-footer .payment-badge:before{font-size:16px}.site-footer .footer-store{width:180px!important}}
 
+/* Footer payment row alignment */
+.site-footer .footer-middle{grid-template-columns:minmax(0,1fr) auto!important}
+.site-footer .footer-payments{justify-self:start!important;text-align:start!important;max-width:760px}
+.site-footer .payment-logos{justify-content:flex-start!important}
+html[dir=rtl] .site-footer .footer-payments{direction:ltr;text-align:left!important}
+html[dir=rtl] .site-footer .footer-payments h3{direction:rtl;text-align:right!important}
+html[dir=rtl] .site-footer .payment-logos{direction:ltr;justify-content:flex-start!important}
+html[dir=rtl] .site-footer .footer-safe{justify-self:end!important}
+
+@media(max-width:1080px){.site-footer .footer-middle{grid-template-columns:1fr!important}.site-footer .footer-payments{justify-self:stretch!important}.site-footer .footer-safe{justify-self:start!important}}
+
+/* Mobile footer layout */
+.site-footer .footer-mobile-title-icon,.site-footer .footer-mobile-chevron{display:none}
+@media(max-width:720px){
+  .site-footer{padding:44px 20px 26px!important;background:radial-gradient(circle at 50% 0%,rgba(38,117,199,.24),transparent 36%),linear-gradient(180deg,#0b1c29 0%,#0d2435 100%)!important}
+  .site-footer:before{inset:auto -35% -20px -35%;height:150px;opacity:.24}
+  .site-footer .footer-top{display:flex!important;flex-direction:column;gap:0;align-items:stretch;text-align:center}
+  .site-footer .footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:34px}
+  .site-footer .footer-logo{width:150px!important;margin:0 0 18px!important}
+  .site-footer .footer-brand p{max-width:360px;margin:0 auto;color:#d9e6f3;font-size:20px!important;line-height:1.65;text-align:center}
+  .site-footer .footer-social{justify-content:center;gap:18px;margin-top:30px}
+  .site-footer .footer-social button{width:58px!important;height:58px!important;border-color:rgba(213,228,242,.38);background:rgba(255,255,255,.035);box-shadow:0 10px 26px rgba(0,0,0,.12)}
+  .site-footer .footer-social button svg{width:24px;height:24px}
+  .site-footer .footer-column{border-top:1px solid rgba(255,255,255,.22);display:block;text-align:inherit;padding:0}
+  .site-footer .footer-contact{border-bottom:1px solid rgba(255,255,255,.22)}
+  .site-footer .footer-column h3{width:100%;height:88px;margin:0!important;display:flex;align-items:center;justify-content:flex-start;gap:18px;color:#eef5ff;font-size:26px!important}
+  .site-footer .footer-column h3:after{display:none}
+  .site-footer .footer-column h3 span{font-size:inherit!important;color:inherit;line-height:1}
+  .site-footer .footer-mobile-title-icon{display:block;color:#d8e7f7;stroke-width:1.9;order:1}
+  .site-footer .footer-mobile-chevron{display:block;color:#d8e7f7;stroke-width:2.1;margin-inline-start:auto;order:3}
+  html[dir=rtl] .site-footer .footer-mobile-chevron{margin-inline-start:0;margin-inline-end:auto}
+  .site-footer .footer-services button,.site-footer .footer-links button,.site-footer .footer-contact a,.site-footer .footer-contact>span{display:none!important}
+  .site-footer .footer-download{margin-top:38px;padding:28px 20px;border:1px solid rgba(255,255,255,.13);border-radius:22px;background:rgba(255,255,255,.045);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 22px 46px rgba(0,0,0,.16)}
+  .site-footer .footer-download h3{display:none}
+  .site-footer .footer-download p{max-width:none;margin:0 0 22px!important;color:#d8e6f2;font-size:22px!important;font-weight:800;line-height:1.5;text-align:center}
+  .site-footer .footer-download p:after{content:'حمل تطبيق WeWay الآن.';display:block;margin-top:4px;color:#b8c8d8;font-size:19px;font-weight:500}
+  html[dir=ltr] .site-footer .footer-download p:after{content:'Download WeWay now.'}
+  .site-footer .footer-download .footer-store{display:inline-grid!important;width:calc(50% - 8px)!important;min-width:0!important;height:66px!important;margin:0 4px;border-radius:9px!important;text-align:start}
+  .site-footer .footer-download .footer-store b{font-size:20px!important}
+  .site-footer .footer-download .footer-store span{font-size:12px!important}
+  .site-footer .footer-divider:first-of-type{display:none!important}
+  .site-footer .footer-middle{display:flex!important;flex-direction:column;gap:32px;margin-top:28px}
+  .site-footer .footer-payments{width:100%;max-width:none;padding:28px 20px;border:1px solid rgba(255,255,255,.13);border-radius:22px;background:rgba(255,255,255,.045);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 22px 46px rgba(0,0,0,.16);direction:rtl!important;text-align:center!important}
+  .site-footer .footer-payments h3{margin:0 0 8px!important;color:#fff;font-size:24px!important;text-align:center!important}
+  .site-footer .footer-payments h3:before{content:'🛡';margin-inline-end:10px;color:#35d889}
+  .site-footer .footer-payments h3:after{content:'دفع آمن وسهل لرحلتك مع WeWay.';display:block;margin-top:12px;color:#b8c8d8;font-size:18px;font-weight:500}
+  html[dir=ltr] .site-footer .footer-payments h3:after{content:'Safe and easy payments for your WeWay trip.'}
+  .site-footer .payment-logos{justify-content:center!important;gap:12px!important;margin-top:24px;direction:ltr!important}
+  .site-footer .payment-badge{min-width:122px!important;height:62px!important}
+  .site-footer .payment-badge.paypal,.site-footer .payment-badge.meeza{display:none!important}
+  .site-footer .footer-safe{display:none}
+  .site-footer .footer-divider{margin:34px 0 28px!important}
+  .site-footer .footer-bottom{display:grid!important;grid-template-columns:1fr 1fr;align-items:center;width:100%;gap:16px;border-top:1px solid rgba(255,255,255,.22)!important;padding-top:28px!important}
+  .site-footer .footer-bottom small,.site-footer .footer-bottom span{font-size:19px!important;line-height:1.55;color:#cbd9e6}
+  .site-footer .footer-bottom span{justify-self:start}
+  .site-footer .footer-bottom small{justify-self:end;text-align:end}
+  .site-footer .footer-bottom svg{width:27px;height:27px}
+}
+@media(max-width:470px){
+  .site-footer .footer-brand p{font-size:18px!important}
+  .site-footer .footer-social{gap:10px}
+  .site-footer .footer-social button{width:50px!important;height:50px!important}
+  .site-footer .footer-column h3{height:78px;font-size:22px!important}
+  .site-footer .footer-download .footer-store{width:100%!important;margin:6px 0}
+  .site-footer .payment-badge{min-width:calc(50% - 8px)!important}
+  .site-footer .footer-bottom{grid-template-columns:1fr}
+  .site-footer .footer-bottom small,.site-footer .footer-bottom span{justify-self:start;text-align:start;font-size:16px!important}
+}
+
+/* Mobile footer cleanup */
+@media(max-width:720px){
+  .site-footer .footer-divider{display:none!important}
+  .site-footer .footer-bottom{margin-top:34px!important}
+  .site-footer .payment-logos{display:grid!important;grid-template-columns:repeat(6,1fr);gap:12px!important;max-width:436px;margin:24px auto 0!important}
+  .site-footer .payment-badge{width:100%!important;min-width:0!important;grid-column:span 2}
+  .site-footer .payment-badge:nth-child(4){grid-column:2 / span 2}
+  .site-footer .payment-badge:nth-child(5){grid-column:4 / span 2}
+}
+@media(max-width:430px){
+  .site-footer .payment-logos{grid-template-columns:1fr 1fr;max-width:300px}
+  .site-footer .payment-badge{grid-column:auto!important}
+  .site-footer .payment-badge:nth-child(5){grid-column:1 / -1!important;max-width:140px;justify-self:center}
+}
+
+/* Footer payments only */
+.site-footer .footer-safe{display:none!important}
+.site-footer .footer-middle{display:block!important}
+.site-footer .footer-payments{width:100%;max-width:none!important;justify-self:auto!important}
+.site-footer .payment-logos{justify-content:flex-start!important}
+html[dir=rtl] .site-footer .footer-payments{direction:ltr!important;text-align:left!important}
+html[dir=rtl] .site-footer .footer-payments h3{direction:rtl!important;text-align:right!important}
+html[dir=rtl] .site-footer .payment-logos{direction:ltr!important;justify-content:flex-start!important}
+
+@media(max-width:720px){
+  .site-footer .footer-payments{direction:ltr!important;text-align:left!important}
+  .site-footer .footer-payments h3{direction:rtl!important;text-align:right!important}
+  .site-footer .payment-logos{display:flex!important;justify-content:flex-start!important;max-width:none!important;margin:24px 0 0!important}
+  .site-footer .payment-badge{width:auto!important;min-width:122px!important;grid-column:auto!important}
+  .site-footer .payment-badge:nth-child(4),.site-footer .payment-badge:nth-child(5){grid-column:auto!important}
+}
+
+/* Footer payment title and badges on one row */
+.site-footer .footer-payments{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important}
+.site-footer .footer-payments h3{flex:0 0 auto!important;margin:0!important;white-space:nowrap!important}
+.site-footer .payment-logos{flex:1 1 auto!important;display:flex!important;flex-wrap:nowrap!important;justify-content:flex-start!important;align-items:center!important;margin:0!important;overflow-x:auto;scrollbar-width:none}
+.site-footer .payment-logos::-webkit-scrollbar{display:none}
+.site-footer .payment-badge{flex:0 0 auto!important}
+html[dir=rtl] .site-footer .footer-payments{direction:rtl!important}
+html[dir=rtl] .site-footer .payment-logos{direction:ltr!important}
+
+@media(max-width:720px){
+  .site-footer .footer-payments{flex-direction:row-reverse!important;gap:16px!important}
+  .site-footer .footer-payments h3:after{display:none!important}
+  .site-footer .payment-logos{margin:0!important;padding-bottom:2px}
+}
+
+/* Mobile footer bottom cleanup */
+@media(max-width:720px){
+  .site-footer .footer-bottom{border-top:0!important;margin-top:22px!important;padding-top:8px!important;grid-template-columns:1fr 1fr!important}
+  .site-footer .footer-bottom small{display:block!important;justify-self:end!important;text-align:end!important;max-width:190px;font-size:17px!important;line-height:1.75!important}
+  .site-footer .footer-bottom span{justify-self:start!important;text-align:start!important;font-size:17px!important;line-height:1.6!important}
+}
+@media(max-width:430px){
+  .site-footer .footer-bottom{grid-template-columns:1fr!important;gap:12px!important}
+  .site-footer .footer-bottom small,.site-footer .footer-bottom span{justify-self:start!important;text-align:start!important;max-width:none}
+}
+
+/* Mobile footer typography scale */
+@media(max-width:720px){
+  .site-footer{padding-top:36px!important}
+  .site-footer .footer-logo{width:122px!important;margin-bottom:14px!important}
+  .site-footer .footer-brand{margin-bottom:26px!important}
+  .site-footer .footer-brand p{font-size:15px!important;line-height:1.75!important;max-width:310px!important}
+  .site-footer .footer-social{gap:10px!important;margin-top:22px!important}
+  .site-footer .footer-social button{width:46px!important;height:46px!important}
+  .site-footer .footer-social button svg{width:19px!important;height:19px!important}
+  .site-footer .footer-column h3{height:66px!important;font-size:18px!important;gap:12px!important}
+  .site-footer .footer-mobile-title-icon{width:22px!important;height:22px!important}
+  .site-footer .footer-mobile-chevron{width:21px!important;height:21px!important}
+  .site-footer .footer-download{margin-top:26px!important;padding:22px 16px!important;border-radius:18px!important}
+  .site-footer .footer-download p{font-size:17px!important;line-height:1.45!important;margin-bottom:16px!important}
+  .site-footer .footer-download p:after{font-size:14px!important;margin-top:3px!important}
+  .site-footer .footer-download .footer-store{height:56px!important}
+  .site-footer .footer-download .footer-store b{font-size:16px!important}
+  .site-footer .footer-download .footer-store span{font-size:10px!important}
+  .site-footer .footer-download .footer-store svg{width:22px!important;height:22px!important}
+  .site-footer .footer-middle{margin-top:20px!important}
+  .site-footer .footer-payments{padding:22px 16px!important;border-radius:18px!important}
+  .site-footer .footer-payments h3{font-size:18px!important}
+  .site-footer .footer-payments h3:after{font-size:14px!important;margin-top:8px!important}
+  .site-footer .payment-badge{height:48px!important;min-width:96px!important;padding:0 12px!important}
+  .site-footer .payment-badge:before{font-size:15px!important}
+  .site-footer .payment-badge.mastercard:before{font-size:11px!important}
+  .site-footer .payment-badge.apple-pay:before{font-size:16px!important}
+  .site-footer .payment-badge.stc-pay:before{font-size:18px!important}
+  .site-footer .payment-badge.stc-pay:after{font-size:13px!important}
+  .site-footer .payment-badge.mada:before,.site-footer .payment-badge.paypal:before,.site-footer .payment-badge.meeza:before{font-size:14px!important}
+  .site-footer .footer-bottom{margin-top:18px!important;padding-top:4px!important}
+  .site-footer .footer-bottom small,.site-footer .footer-bottom span{font-size:14px!important;line-height:1.6!important}
+  .site-footer .footer-bottom svg{width:21px!important;height:21px!important}
+}
+

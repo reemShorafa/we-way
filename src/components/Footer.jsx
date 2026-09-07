@@ -1,4 +1,4 @@
-import { Apple, Heart, Mail, MapPin, Phone, Play, ShieldCheck } from 'lucide-react';
+import { Apple, ChevronDown, Heart, Layers, Link, Mail, MapPin, Phone, Play, ShieldCheck, Smartphone } from 'lucide-react';
 import logo from '../img/logo.png';
 import { navTargets } from '../data/siteData';
 
@@ -47,17 +47,17 @@ export default function Footer({ ar, t, go }) {
           </div>
         </section>
 
-        <FooterColumn title={ar ? 'الخدمات' : 'Services'}>
+        <FooterColumn title={ar ? 'الخدمات' : 'Services'} className="footer-services" icon={Layers}>
           {services.map(item => <button type="button" key={item}>{item}</button>)}
         </FooterColumn>
 
-        <FooterColumn title={ar ? 'روابط سريعة' : 'Quick Links'}>
+        <FooterColumn title={ar ? 'روابط سريعة' : 'Quick Links'} className="footer-links" icon={Link}>
           {quickLinks.map(item => (
             <button type="button" key={item.label} onClick={() => go(item.target || 'home')}>{item.label}</button>
           ))}
         </FooterColumn>
 
-        <FooterColumn title={ar ? 'حمّل التطبيق' : 'Download App'} className="footer-download">
+        <FooterColumn title={ar ? 'حمّل التطبيق' : 'Download App'} className="footer-download" icon={Smartphone}>
           <p>{ar ? 'استعد لمغامرتك القادمة وحمّل تطبيق WeWay الآن.' : 'Get ready for your next adventure and download WeWay now.'}</p>
           <button type="button" className="footer-store">
             <Apple size={26} />
@@ -71,7 +71,7 @@ export default function Footer({ ar, t, go }) {
           </button>
         </FooterColumn>
 
-        <FooterColumn title={ar ? 'تواصل معنا' : 'Contact Us'} className="footer-contact">
+        <FooterColumn title={ar ? 'تواصل معنا' : 'Contact Us'} className="footer-contact" icon={Mail}>
           <a href="mailto:hello@weway.app"><Mail size={20} /> hello@weway.app</a>
           <a href="tel:+905551234567"><Phone size={20} /> +90 555 123 45 67</a>
           <span><MapPin size={20} /> {ar ? 'Istanbul, Turkey' : 'Istanbul, Turkey'}</span>
@@ -106,10 +106,10 @@ export default function Footer({ ar, t, go }) {
   );
 }
 
-function FooterColumn({ title, className = '', children }) {
+function FooterColumn({ title, className = '', icon: Icon, children }) {
   return (
     <section className={`footer-column ${className}`}>
-      <h3>{title}</h3>
+      <h3>{Icon && <Icon className="footer-mobile-title-icon" size={28} />}<span>{title}</span><ChevronDown className="footer-mobile-chevron" size={26} /></h3>
       {children}
     </section>
   );
