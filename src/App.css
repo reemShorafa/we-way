@@ -8,7 +8,7 @@
   --secondary-dark: #16753c;
   --secondary-light: #e9f8ef;
   --white: #fff;
-  --background: #f7faf9;
+  --background: #f3f6f5;
   --surface: #fff;
   --text: #163347;
   --text-secondary: #617487;
@@ -4481,5 +4481,407 @@ html[dir="rtl"] .site-footer .payment-logos {
     max-height: none;
     opacity: 1;
     overflow: visible;
+  }
+}
+/* ========================================
+   WeWay Globe Trip Map
+   جميع الكلاسات تبدأ بـ wwglobe
+======================================== */
+
+.wwglobe-card {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 34px;
+  background: radial-gradient(
+    circle at 50% 25%,
+    rgba(219, 243, 248, 0.9),
+    rgba(246, 250, 249, 0.8) 48%,
+    rgba(235, 246, 242, 0.95) 100%
+  );
+  border: 1px solid rgba(185, 216, 204, 0.8);
+  box-shadow: 0 30px 80px rgba(22, 51, 71, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.wwglobe-card::before {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  top: -140px;
+  right: -100px;
+  border-radius: 50%;
+  background: rgba(38, 117, 199, 0.06);
+  filter: blur(4px);
+}
+
+.wwglobe-card::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  bottom: -130px;
+  left: -80px;
+  border-radius: 50%;
+  background: rgba(38, 166, 90, 0.07);
+}
+
+.wwglobe-world {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+}
+
+.wwglobe-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.wwglobe-earth {
+  stroke: rgba(128, 181, 187, 0.5);
+  stroke-width: 2px;
+}
+
+.wwglobe-highlight {
+  fill: rgba(255, 255, 255, 0.25);
+}
+
+.wwglobe-grid {
+  fill: none;
+  stroke: rgba(110, 159, 171, 0.15);
+  stroke-width: 1;
+}
+
+.wwglobe-continents path {
+  fill: #b9d8c6;
+  stroke: rgba(91, 157, 120, 0.28);
+  stroke-width: 1.2;
+  transition: fill 0.3s ease, opacity 0.3s ease;
+}
+
+.wwglobe-continents path:hover {
+  fill: #a7cfb8;
+}
+
+/* Trip routes */
+
+.wwglobe-route-shadow {
+  fill: none;
+  stroke: rgba(38, 117, 199, 0.11);
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+.wwglobe-route-line {
+  fill: none;
+  stroke: #2675c7;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 9 11;
+  animation: wwGlobeRouteMove 8s linear infinite;
+}
+
+@keyframes wwGlobeRouteMove {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+/* Location dots */
+
+.wwglobe-location-dot {
+  fill: #27aa60;
+  stroke: #ffffff;
+  stroke-width: 4;
+  filter: drop-shadow(0 4px 7px rgba(21, 127, 68, 0.25));
+}
+
+/* Travelers moving across globe */
+
+.wwglobe-traveler-circle {
+  fill: #ffffff;
+  stroke: #2675c7;
+  stroke-width: 3;
+}
+
+.wwglobe-traveler-green {
+  stroke: #26a65a;
+}
+
+.wwglobe-traveler-text {
+  font-size: 12px;
+  font-weight: 800;
+  fill: #165496;
+  font-family: inherit;
+}
+
+/* Live badge */
+
+.wwglobe-live {
+  position: absolute;
+  z-index: 8;
+  top: 25px;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #385369;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(22, 51, 71, 0.09);
+  backdrop-filter: blur(12px);
+}
+
+.wwglobe-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #27b262;
+  box-shadow: 0 0 0 5px rgba(39, 178, 98, 0.12);
+  animation: wwGlobePulse 1.8s infinite;
+}
+
+@keyframes wwGlobePulse {
+  50% {
+    box-shadow: 0 0 0 10px rgba(39, 178, 98, 0);
+  }
+}
+
+/* Destination */
+
+.wwglobe-destination {
+  position: absolute;
+  z-index: 7;
+  top: 25%;
+  right: 11%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  animation: wwGlobeFloat 4s ease-in-out infinite;
+}
+
+.wwglobe-destination-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #27b367, #16834a);
+  box-shadow: 0 10px 25px rgba(38, 166, 90, 0.27),
+    0 0 0 6px rgba(38, 166, 90, 0.09);
+}
+
+.wwglobe-destination b {
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #244d69;
+  font-size: 11px;
+  white-space: nowrap;
+  box-shadow: 0 7px 16px rgba(22, 51, 71, 0.1);
+}
+
+/* User pins */
+
+.wwglobe-person {
+  position: absolute;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  animation: wwGlobeFloat 4.5s ease-in-out infinite;
+}
+
+.wwglobe-person > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #2675c7;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: #165496;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(22, 51, 71, 0.16);
+}
+
+.wwglobe-person > b {
+  padding: 5px 9px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #526979;
+  font-size: 10px;
+  white-space: nowrap;
+  box-shadow: 0 8px 16px rgba(22, 51, 71, 0.09);
+}
+
+.wwglobe-person-mohammed {
+  top: 37%;
+  left: 16%;
+}
+
+.wwglobe-person-sara {
+  top: 56%;
+  left: 42%;
+  animation-delay: -1.5s;
+}
+
+/* Notifications */
+
+.wwglobe-alert {
+  position: absolute;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #304e63;
+  box-shadow: 0 12px 30px rgba(22, 51, 71, 0.11);
+  backdrop-filter: blur(12px);
+  animation: wwGlobeFloat 5s ease-in-out infinite;
+}
+
+.wwglobe-alert b {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.wwglobe-alert-icon {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #2675c7;
+}
+
+.wwglobe-alert-success {
+  background: #e8f8ef;
+  color: #20a35b;
+}
+
+.wwglobe-alert-arrived {
+  top: 18%;
+  right: 20%;
+}
+
+.wwglobe-alert-near {
+  left: 11%;
+  bottom: 17%;
+  animation-delay: -2s;
+}
+
+@keyframes wwGlobeFloat {
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .wwglobe-card {
+    min-height: 430px;
+    padding: 12px;
+  }
+
+  .wwglobe-world {
+    max-width: 620px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 620px) {
+  .wwglobe-card {
+    min-height: 360px;
+    border-radius: 24px;
+    padding: 5px;
+  }
+
+  .wwglobe-live {
+    top: 14px;
+    left: 14px;
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .wwglobe-person > span {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .wwglobe-person > b {
+    font-size: 9px;
+  }
+
+  .wwglobe-alert {
+    padding: 7px 9px;
+  }
+
+  .wwglobe-alert b {
+    font-size: 9px;
+  }
+
+  .wwglobe-alert-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .wwglobe-destination-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .wwglobe-alert-arrived {
+    top: 18%;
+    right: 12%;
+  }
+
+  .wwglobe-alert-near {
+    bottom: 15%;
+    left: 7%;
+  }
+
+  .wwglobe-person-mohammed {
+    top: 37%;
+    left: 11%;
+  }
+
+  .wwglobe-person-sara {
+    top: 56%;
+    left: 40%;
+  }
+}
+
+/* Reduce motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .wwglobe-route-line,
+  .wwglobe-live-dot,
+  .wwglobe-person,
+  .wwglobe-alert,
+  .wwglobe-destination {
+    animation: none;
   }
 }
