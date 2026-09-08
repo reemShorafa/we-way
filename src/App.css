@@ -1689,15 +1689,127 @@ html[dir="ltr"] .app-download-copy { text-align: left; direction: ltr; }
 }
 
 .hero h1 {
-  font-size: clamp(30px, 3.55vw, 52px);
+  font-size: clamp(28px, 3.05vw, 45px);
   max-width: 610px;
 }
 
+.hero-comma {
+  display: inline-block;
+  margin: 0 .04em;
+  font-size: .48em;
+  line-height: 1;
+  vertical-align: .18em;
+}
+
+/* Live trip map */
+.travel-map {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  border: 1px solid #c6ddd2;
+  border-radius: 28px;
+  background: #d9ece4;
+  box-shadow: var(--shadow-md);
+  isolation: isolate;
+}
+
+.travel-map-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: #d9ece4;
+}
+
+.travel-map .leaflet-control-zoom {
+  overflow: hidden;
+  border: 0;
+  border-radius: 9px;
+  box-shadow: 0 5px 14px rgba(22, 51, 71, .16);
+}
+
+.travel-map .leaflet-control-zoom a {
+  width: 29px;
+  height: 29px;
+  border: 0;
+  color: var(--text);
+  font: 700 20px/27px Arial, sans-serif;
+}
+
+.weway-map-marker { background: transparent; border: 0; }
+
+.weway-map-marker__pin {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 8px;
+  background: var(--primary);
+  box-shadow: 0 5px 12px rgba(22, 84, 150, .35);
+  transform: rotate(-45deg);
+}
+
+.weway-map-marker__pin--start { background: var(--secondary); }
+.weway-map-marker__pin--finish { background: #e48a20; }
+
+.weway-map-label {
+  margin-top: 5px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .95);
+  color: var(--text);
+  box-shadow: 0 5px 13px rgba(22, 51, 71, .13);
+  font-family: Tajawal, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.weway-map-label::before { display: none; }
+
+.map-live {
+  position: absolute;
+  z-index: 500;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, .8);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .86);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 5px 14px rgba(22, 51, 71, .1);
+}
+
+.map-live span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--secondary);
+  box-shadow: 0 0 0 4px rgba(38, 166, 90, .16);
+}
+
+@media (max-width: 620px) {
+  .travel-map { min-height: 330px; border-radius: 20px; }
+  .weway-map-marker__pin { width: 25px; height: 25px; border-width: 2px; }
+  .weway-map-label { margin-top: 3px; padding: 4px 6px; border-radius: 5px; font-size: 9px; }
+  .map-live { top: 11px; right: 11px; padding: 6px 8px; font-size: 9px; }
+}
+
 .hero p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.85;
   max-width: 620px;
 }
+
+.hero .eyebrow { font-size: 13px; }
+.hero .button { padding: 11px 17px; font-size: 14px; }
 
 .hero .motto {
   font-size: 15px;
@@ -1713,11 +1825,11 @@ html[dir="ltr"] .app-download-copy { text-align: left; direction: ltr; }
   }
 
   .hero h1 {
-    font-size: clamp(28px, 9vw, 38px);
+    font-size: clamp(25px, 8vw, 34px);
   }
 
   .hero p {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 

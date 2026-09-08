@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@turf/centroid": "^7.4.0",
     "@turf/great-circle": "^7.4.0",
+    "leaflet": "^1.9.4",
     "lucide-react": "^1.41.0",
     "mapbox-gl": "^3.30.0",
     "react": "^19.2.8",

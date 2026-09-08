@@ -1,38 +1,32 @@
-import { CirclePlay, Download } from "lucide-react";
-import GlobeTripMap from "./RealGlobeMap";
+import { Download } from 'lucide-react';
+import GlobeTripMap from './RealGlobeMap';
 
-export default function Hero({ ar, t, go }) {
+const stripPunctuation = value => value.replace(/[\u060C\u061B,;:.!?\u061F'"“”]/g, '');
+
+function HeroTitle({ value }) {
+  return value.split(/([,\u060C])/).map((part, index) => (
+    part === ',' || part === '\u060C'
+      ? <span className="hero-comma" key={`${part}-${index}`}>{part}</span>
+      : part
+  ));
+}
+
+export default function Hero({ t, go }) {
   return (
     <section className="hero section" id="home">
       <div>
-        <span className="eyebrow">{t.tag}</span>
-
-        <h1>{t.hero}</h1>
-
-        <p>{t.desc}</p>
-
-        <p className="motto">{t.motto}</p>
-
+        <span className="eyebrow">{stripPunctuation(t.tag)}</span>
+        <h1><HeroTitle value={t.hero} /></h1>
+        <p>{stripPunctuation(t.desc)}</p>
         <div className="buttons">
-          <button className="button" onClick={() => go("cta")}>
-            <Download size={18} />
-            {ar ? "حمل التطبيق الآن" : t.dl}
+          <button className="button" onClick={() => go('download')}>
+            <Download size={18} aria-hidden="true" />
+            <span>{t.dl}</span>
           </button>
-
-          <button className="plain" onClick={() => go("how")}>
-            <CirclePlay size={18} />
-            {t.work}
-          </button>
-        </div>
-
-        <div className="friends">
-          <span>
-            {ar ? "+ 12 صديق يخططون الآن" : "+ 12 friends planning now"}
-          </span>
         </div>
       </div>
 
-      <GlobeTripMap ar={ar} />
+      <GlobeTripMap />
     </section>
   );
 }

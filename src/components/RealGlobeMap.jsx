@@ -1,74 +1,70 @@
-import { useEffect, useRef, useState } from "react";
-import Globe from "react-globe.gl";
+import { useEffect, useRef } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+const stops = [
+  { coordinates: [31.520, 34.805], label: 'نقطة التجمع', kind: 'start' },
+  { coordinates: [31.546, 34.863], label: 'استراحة', kind: 'stop' },
+  { coordinates: [31.586, 34.930], label: 'الوجهة', kind: 'finish' },
+];
+
+const route = [
+  [31.520, 34.805],
+  [31.527, 34.826],
+  [31.519, 34.846],
+  [31.546, 34.863],
+  [31.558, 34.890],
+  [31.572, 34.901],
+  [31.586, 34.930],
+];
+
+const markerIcon = kind => L.divIcon({
+  className: 'weway-map-marker',
+  html: `<span class="weway-map-marker__pin weway-map-marker__pin--${kind}"></span>`,
+  iconSize: [34, 44],
+  iconAnchor: [17, 41],
+  tooltipAnchor: [0, 7],
+});
 
 export default function RealGlobeMap() {
-  const wrapperRef = useRef();
-  const globeRef = useRef();
-  const [countries, setCountries] = useState([]);
-  const [dimensions, setDimensions] = useState({ width: 500, height: 500 });
+  const mapElement = useRef(null);
+  const mapInstance = useRef(null);
 
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"
-    )
-      .then((res) => res.json())
-      .then((data) => setCountries(data.features || []));
-  }, []);
+    if (!mapElement.current) return undefined;
 
-  useEffect(() => {
-    const updateSize = () => {
-      if (wrapperRef.current) {
-        const { width, height } = wrapperRef.current.getBoundingClientRect();
-        setDimensions({ width, height });
-      }
+    const map = L.map(mapElement.current, {
+      zoomControl: false,
+      attributionControl: false,
+      scrollWheelZoom: false,
+    }).setView([31.552, 34.868], 12);
+    mapInstance.current = map;
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors',
+    }).addTo(map);
+
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
+    L.polyline(route, { color: '#ffffff', weight: 9, opacity: 0.88, lineCap: 'round' }).addTo(map);
+    L.polyline(route, { color: '#2675c7', weight: 5, opacity: 1, lineCap: 'round', dashArray: '10 8' }).addTo(map);
+
+    stops.forEach(stop => {
+      L.marker(stop.coordinates, { icon: markerIcon(stop.kind), keyboard: false })
+        .addTo(map)
+        .bindTooltip(stop.label, { permanent: true, direction: 'bottom', className: 'weway-map-label' });
+    });
+
+    return () => {
+      mapInstance.current = null;
+      map.remove();
     };
-    updateSize();
-    const observer = new ResizeObserver(updateSize);
-    if (wrapperRef.current) observer.observe(wrapperRef.current);
-    return () => observer.disconnect();
   }, []);
-
-  const handleGlobeReady = () => {
-    if (!globeRef.current) return;
-    const controls = globeRef.current.controls();
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.4;
-    controls.enableDamping = true;
-
-    globeRef.current.pointOfView({ lat: 20, lng: 10, altitude: 2.2 });
-  };
 
   return (
-    <div
-      ref={wrapperRef}
-      style={{
-        width: "100%",
-        maxWidth: 480,
-        height: 480,
-        background: "#04070f",
-        borderRadius: 16,
-        overflow: "hidden",
-      }}
-    >
-      <Globe
-        ref={globeRef}
-        width={dimensions.width}
-        height={dimensions.height}
-        onGlobeReady={handleGlobeReady}
-        backgroundColor="#04070f"
-        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-day.jpg"
-        bumpImageUrl="https://unpkg.com/three-globe/example/img/earth-topology.png"
-        showAtmosphere={true}
-        atmosphereColor="#4da3ff"
-        atmosphereAltitude={0.18}
-        /* حدود الدول فقط */
-        polygonsData={countries}
-        polygonCapColor={() => "rgba(210, 235, 190, 0.85)"}
-        polygonSideColor={() => "rgba(120, 150, 110, 0.3)"}
-        polygonStrokeColor={() => "#e05a5a"}
-        polygonAltitude={0.006}
-        polygonLabel={(d) => `<b>${d.properties?.name || "Country"}</b>`}
-      />
+    <div className="travel-map" aria-label="خريطة مسار رحلة WeWay">
+      <div ref={mapElement} className="travel-map-canvas" />
+      <div className="map-live"><span />الرحلة مباشرة</div>
     </div>
   );
 }
