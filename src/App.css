@@ -1836,12 +1836,20 @@ html[dir="ltr"] .app-download-copy { text-align: left; direction: ltr; }
 .memory h2,
 .partners h2,
 .contact-inner h2 {
-  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+  font-size: clamp(1.45rem, 1.8vw, 1.9rem) !important;
   line-height: 1.32;
 }
 
 .app-download h2 {
   font-size: clamp(1.8rem, 2.6vw, 2.65rem);
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+  font-family: Tajawal, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
 .hero p {
