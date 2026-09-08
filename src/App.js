@@ -8,7 +8,10 @@ import HowItWorks from './components/HowItWorks';
 import Stats from './components/Stats';
 import Memory from './components/Memory';
 import Trips from './components/Trips';
+import Partners from './components/Partners';
 import Testimonials from './components/Testimonials';
+import AppDownload from './components/AppDownload';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TripModal from './components/TripModal';
 
@@ -72,7 +75,10 @@ export default function App() {
       <Stats ar={ar} />
       <Memory ar={ar} t={t} go={go} />
       <Trips ar={ar} t={t} setModal={setModal} />
+      <Partners ar={ar} />
       <Testimonials ar={ar} t={t} slide={slide} setSlide={setSlide} />
+      <AppDownload ar={ar} />
+      <Contact ar={ar} />
       <Footer ar={ar} t={t} go={go} />
       <TripModal ar={ar} modal={modal} setModal={setModal} />
     </main>

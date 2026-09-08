@@ -23,7 +23,9 @@ export default function Memory({ ar, t, go }) {
             <Camera size={20} />
             {ar ? 'ذكرياتكم المشتركة' : 'Your shared memory'}
           </span>
-          <h2 className="memory-title">{t.mem}</h2>
+          <h2 className="memory-title">
+            {ar ? <><span>لحظات موثقة..</span><br /><span>وذكريات تدوم للأبد</span></> : t.mem}
+          </h2>
           <p className="memory-description">{t.msub}</p>
 
           <div className="memory-actions">
