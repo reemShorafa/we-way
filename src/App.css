@@ -408,6 +408,22 @@ h2 {
   text-align: center;
 }
 
+#trips > .head {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+#trips > .head h2,
+#trips > .head p {
+  margin-inline: auto;
+}
+
+#trips > .head h2 {
+  max-width: 680px;
+}
+
 #features > .head h2 {
   max-width: 680px;
   margin: 14px auto 18px;
