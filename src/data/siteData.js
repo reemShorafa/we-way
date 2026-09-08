@@ -14,6 +14,7 @@ import {
 import saudiTrip from "../img/trips/saudi-trip.png";
 import turkeyTrip from "../img/trips/turkey-trip.jfif";
 import dubaiTrip from "../img/trips/dubai-trip.jfif";
+import parisTrip from "../img/trips/paris-trip.jfif";
 
 export const images = {
   hero: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
@@ -193,11 +194,11 @@ export const trips = [
     turkeyTrip,
   ],
   [
-    "رحلة البحر الأحمر",
-    "Red Sea Journey",
-    "جدة، السعودية",
-    "Jeddah, Saudi Arabia",
-    images.sea,
+    "رحلة باريس",
+    "Paris Journey",
+    "باريس، فرنسا",
+    "Paris, France",
+    parisTrip,
   ],
   [
     "ويكند في دبي",
