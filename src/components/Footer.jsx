@@ -151,7 +151,7 @@ export default function Footer({ ar, t, go }) {
           className="footer-links"
           icon={Link}
         >
-          {quickLinks.map((item) => (
+          {quickLinks.slice(0, t.nav.length).map((item) => (
             <button
               type="button"
               key={item.label}
@@ -196,19 +196,19 @@ export default function Footer({ ar, t, go }) {
           className="footer-contact"
           icon={Mail}
         >
-          <a href="mailto:hello@weway.app">
+          <a href="mailto:info@weway.sa.com">
             <Mail size={20} />
-            hello@weway.app
+            info@weway.sa.com
           </a>
 
-          <a href="tel:+905551234567">
+          <a href="tel:+972598113864">
             <Phone size={20} />
-            +90 555 123 45 67
+            +972598113864
           </a>
 
           <span>
             <MapPin size={20} />
-            Istanbul, Turkey
+            المملكة العربية السعودية - الرياض - حي الحمراء
           </span>
         </FooterColumn>
       </div>

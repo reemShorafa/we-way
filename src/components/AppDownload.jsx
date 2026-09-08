@@ -1,4 +1,4 @@
-import { Apple, Download, Play } from 'lucide-react';
+import { Apple, Play } from 'lucide-react';
 import mobilePreview from '../img/app/weway-mobile.jpeg';
 
 export default function AppDownload({ ar }) {
@@ -26,7 +26,6 @@ export default function AppDownload({ ar }) {
             <span><small>{ar ? 'حمله من' : 'Get it on'}</small><b>Google Play</b></span>
           </a>
         </div>
-        <div className="app-download-note"><Download size={15} aria-hidden="true" />{ar ? 'متاح قريباً على iOS و Android' : 'Coming soon for iOS and Android'}</div>
       </div>
     </section>
   );

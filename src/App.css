@@ -1852,6 +1852,19 @@ html[dir="rtl"] h3 {
   letter-spacing: 0;
 }
 
+/* Footer text and icons use the brand blue on hover. */
+.site-footer :is(p, span, b, small, h3, a, button) {
+  transition: color .2s ease;
+}
+
+.site-footer :is(p, span, b, small, h3, a, button):hover {
+  color: var(--primary) !important;
+}
+
+.site-footer :is(p, span, b, small, h3, a, button):hover svg {
+  color: currentColor;
+}
+
 .hero p {
   font-size: 14px;
   line-height: 1.85;
