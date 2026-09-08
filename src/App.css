@@ -1802,6 +1802,48 @@ html[dir="ltr"] .app-download-copy { text-align: left; direction: ltr; }
   .map-live { top: 11px; right: 11px; padding: 6px 8px; font-size: 9px; }
 }
 
+/* Tighter desktop statistics and a consistent section-title scale. */
+@media (min-width: 621px) {
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 270px));
+    justify-content: center;
+    gap: 34px;
+    padding: 58px 28px;
+  }
+
+  .stats div {
+    min-height: 164px;
+    gap: 8px;
+    padding: 23px 18px;
+    border-radius: 17px;
+  }
+
+  .stats svg {
+    width: 46px;
+    height: 46px;
+    padding: 10px;
+    border-radius: 13px;
+  }
+
+  .stats b {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+  }
+
+  .stats span { font-size: 13px; }
+}
+
+.head h2,
+.memory h2,
+.partners h2,
+.contact-inner h2 {
+  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+  line-height: 1.32;
+}
+
+.app-download h2 {
+  font-size: clamp(1.8rem, 2.6vw, 2.65rem);
+}
+
 .hero p {
   font-size: 14px;
   line-height: 1.85;
