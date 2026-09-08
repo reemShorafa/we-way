@@ -11,6 +11,10 @@ import {
   Users,
 } from "lucide-react";
 
+import saudiTrip from "../img/trips/saudi-trip.png";
+import turkeyTrip from "../img/trips/turkey-trip.jfif";
+import dubaiTrip from "../img/trips/dubai-trip.jfif";
+
 export const images = {
   hero: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
   north:
@@ -179,14 +183,14 @@ export const trips = [
     "Northern Adventure",
     "عسير، السعودية",
     "Asir, Saudi Arabia",
-    images.north,
+    saudiTrip,
   ],
   [
     "هروب إسطنبول",
     "Istanbul Escape",
     "إسطنبول، تركيا",
     "Istanbul, Turkey",
-    images.istanbul,
+    turkeyTrip,
   ],
   [
     "رحلة البحر الأحمر",
@@ -200,7 +204,7 @@ export const trips = [
     "Dubai Weekend",
     "دبي، الإمارات",
     "Dubai, UAE",
-    images.dubai,
+    dubaiTrip,
   ],
 ];
 

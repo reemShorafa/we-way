@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, Camera, MapPin, Plane } from 'lucide-react';
-import { images } from '../data/siteData';
+import dammamMemory from '../img/memory/dammam-memory.jfif';
 
 const avatars = [
   'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80',
@@ -46,7 +46,7 @@ export default function Memory({ ar, t, go }) {
 
         <div className="memory-visual">
           <div className="memory-photo-card">
-            <img src={images.hero} alt={ar ? 'أصدقاء في رحلة' : 'Friends traveling'} />
+            <img src={dammamMemory} alt={ar ? 'أصدقاء في رحلة' : 'Friends traveling'} />
 
             <div className="memory-location">
               <MapPin size={28} />
