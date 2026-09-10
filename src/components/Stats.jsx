@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { MapPinned, Sparkles, Users } from 'lucide-react';
 
+const COUNT_DURATION = 850;
+
 function CountUp({ value }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -12,10 +14,11 @@ function CountUp({ value }) {
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting) return;
 
-      const duration = 850;
       const start = performance.now();
+
+      // Ease out the number once, when its card becomes visible.
       const tick = now => {
-        const progress = Math.min((now - start) / duration, 1);
+        const progress = Math.min((now - start) / COUNT_DURATION, 1);
         setCount(Math.round(value * (1 - Math.pow(1 - progress, 3))));
         if (progress < 1) requestAnimationFrame(tick);
       };

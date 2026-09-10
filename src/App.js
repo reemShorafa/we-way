@@ -15,6 +15,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TripModal from './components/TripModal';
 
+const REVEAL_SELECTOR = '.section, .feature, .step, .stats > div, footer > div';
+
 export default function App() {
   const [lang, setLang] = useState(() => localStorage.getItem('weway-language') || 'ar');
   const [menu, setMenu] = useState(false);
@@ -30,7 +32,9 @@ export default function App() {
   }, [lang, ar]);
 
   useEffect(() => {
-    const elements = document.querySelectorAll('.section, .feature, .step, .stats > div, footer > div');
+    const elements = document.querySelectorAll(REVEAL_SELECTOR);
+
+    // Reveal each content block once it enters the viewport.
     const observer = new IntersectionObserver(
       entries => entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -52,6 +56,7 @@ export default function App() {
 
   useEffect(() => {
     const close = event => event.key === 'Escape' && setModal(null);
+
     window.addEventListener('keydown', close);
     document.body.style.overflow = modal === null ? '' : 'hidden';
 

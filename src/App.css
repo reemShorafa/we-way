@@ -536,7 +536,6 @@ h2 {
 .steps-mosaic {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-rows: none;
   gap: 18px;
 }
 
@@ -547,7 +546,6 @@ h2 {
   background: var(--white);
   color: var(--text);
   border: 0;
-  background: var(--white);
   isolation: isolate;
   aspect-ratio: 312 / 720;
 }
@@ -670,7 +668,6 @@ h2 {
 @media (max-width: 900px) {
   .steps-mosaic {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-rows: none;
   }
 
   .step-card:nth-child(-n + 3) {
@@ -1337,6 +1334,20 @@ footer svg,
 }
 
 @media (max-width: 620px) {
+  .head h2,
+  .memory h2,
+  .partners h2,
+  .contact-inner h2 {
+    padding-bottom: 0;
+  }
+
+  .head h2::after,
+  .memory h2::after,
+  .partners h2::after,
+  .contact-inner h2::after {
+    display: none;
+  }
+
   header {
     padding: 0 12px;
     top: 7px;
@@ -5170,7 +5181,7 @@ html[dir="rtl"] .site-footer .payment-logos {
 }
 /* ========================================
    WeWay Globe Trip Map
-   جميع الكلاسات تبدأ بـ wwglobe
+   All classes use the wwglobe prefix.
 ======================================== */
 
 .wwglobe-card {
@@ -5894,5 +5905,35 @@ footer.site-footer::after {
   .stats span {
     font-size: 9px;
     line-height: 1.35;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .site-footer .footer-bottom {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    justify-items: start !important;
+  }
+
+  .site-footer .footer-bottom small,
+  .site-footer .footer-bottom span {
+    justify-self: start !important;
+    text-align: start !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .steps-mosaic {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    justify-items: center !important;
+  }
+
+  .step-card,
+  .step-card:nth-child(-n + 5) {
+    aspect-ratio: 312 / 560 !important;
+    grid-column: 1 / -1 !important;
+    width: min(100%, 320px) !important;
   }
 }
