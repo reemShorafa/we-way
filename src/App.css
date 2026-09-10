@@ -5912,13 +5912,13 @@ footer.site-footer::after {
   .site-footer .footer-bottom {
     grid-template-columns: 1fr !important;
     gap: 6px !important;
-    justify-items: start !important;
+    justify-items: center !important;
   }
 
   .site-footer .footer-bottom small,
   .site-footer .footer-bottom span {
-    justify-self: start !important;
-    text-align: start !important;
+    justify-self: center !important;
+    text-align: center !important;
     max-width: none !important;
   }
 }
@@ -5935,5 +5935,15 @@ footer.site-footer::after {
     aspect-ratio: 312 / 560 !important;
     grid-column: 1 / -1 !important;
     width: min(100%, 320px) !important;
+  }
+
+  .site-footer .footer-bottom {
+    justify-items: center !important;
+  }
+
+  .site-footer .footer-bottom small,
+  .site-footer .footer-bottom span {
+    justify-self: center !important;
+    text-align: center !important;
   }
 }
