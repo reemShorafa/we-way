@@ -1,10 +1,8 @@
 import { useEffect, useRef } from 'react';
 import SectionHead from './SectionHead';
-import { trips } from '../data/siteData';
+import { getTripImage, getTripLocation, getTripTitle, trips } from '../data/siteData';
 
 const AUTOSCROLL_INTERVAL = 2000;
-const tripTitle = (trip, ar) => trip[ar ? 0 : 1];
-const tripLocation = (trip, ar) => trip[ar ? 2 : 3];
 
 export default function Trips({ ar, t, setModal }) {
   const scrollerRef = useRef(null);
@@ -36,10 +34,10 @@ export default function Trips({ ar, t, setModal }) {
       <div className="tripGrid" ref={scrollerRef}>
         {carouselTrips.map((trip, index) => (
           <button className="trip" onClick={() => setModal(index % trips.length)} key={`${trip[1]}-${index}`}>
-            <img src={trip[4]} alt={tripTitle(trip, ar)} />
+            <img src={getTripImage(trip)} alt={getTripTitle(trip, ar)} />
             <div>
-              <small>{tripLocation(trip, ar)}</small>
-              <h3>{tripTitle(trip, ar)}</h3>
+              <small>{getTripLocation(trip, ar)}</small>
+              <h3>{getTripTitle(trip, ar)}</h3>
               <b>{t.view}</b>
             </div>
           </button>

@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./components/RealGlobeMap', () => function RealGlobeMapMock() {
+  return <div aria-label="WeWay trip map" />;
+});
+
+test('renders the WeWay landing page', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('main')).toBeInTheDocument();
+  expect(screen.getAllByText(/WeWay/i).length).toBeGreaterThan(0);
 });

@@ -46,9 +46,12 @@ export default function RealGlobeMap() {
     }).addTo(map);
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
+
+    // Draw a highlighted route above the light base line.
     L.polyline(route, { color: '#ffffff', weight: 9, opacity: 0.88, lineCap: 'round' }).addTo(map);
     L.polyline(route, { color: '#2675c7', weight: 5, opacity: 1, lineCap: 'round', dashArray: '10 8' }).addTo(map);
 
+    // Attach readable labels to the main route stops.
     stops.forEach(stop => {
       L.marker(stop.coordinates, { icon: markerIcon(stop.kind), keyboard: false })
         .addTo(map)

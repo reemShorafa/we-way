@@ -16,17 +16,6 @@ import turkeyTrip from "../img/trips/turkey-trip.jfif";
 import dubaiTrip from "../img/trips/dubai-trip.jfif";
 import parisTrip from "../img/trips/paris-trip.jfif";
 
-export const images = {
-  hero: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-  north:
-    "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80",
-  istanbul:
-    "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=800&q=80",
-  sea: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
-  dubai:
-    "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
-};
-
 export const copy = {
   ar: {
     nav: ["الرئيسية", "المميزات", "كيف نعمل", "رحلاتنا", "آراء عملائنا "],
@@ -208,6 +197,10 @@ export const trips = [
     dubaiTrip,
   ],
 ];
+
+export const getTripTitle = (trip, ar) => trip[ar ? 0 : 1];
+export const getTripLocation = (trip, ar) => trip[ar ? 2 : 3];
+export const getTripImage = trip => trip[4];
 
 export const reviews = {
   ar: [
