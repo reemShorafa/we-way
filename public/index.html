@@ -19,6 +19,18 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>WeWay</title>
+    <script>
+      (function () {
+        var language = localStorage.getItem('weway-language');
+
+        if (language !== 'ar' && language !== 'en') {
+          language = 'ar';
+        }
+
+        document.documentElement.lang = language;
+        document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+      })();
+    </script>
   </head>
 
   <body>

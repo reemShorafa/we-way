@@ -16,19 +16,35 @@ import Footer from './components/Footer';
 import TripModal from './components/TripModal';
 
 const REVEAL_SELECTOR = '.section, .feature, .step, .stats > div, footer > div';
+const LANGUAGE_KEY = 'weway-language';
+const DEFAULT_LANGUAGE = 'ar';
+const SUPPORTED_LANGUAGES = ['ar', 'en'];
+
+const getStoredLanguage = () => {
+  const storedLanguage = localStorage.getItem(LANGUAGE_KEY);
+
+  return SUPPORTED_LANGUAGES.includes(storedLanguage) ? storedLanguage : DEFAULT_LANGUAGE;
+};
 
 export default function App() {
-  const [lang, setLang] = useState(() => localStorage.getItem('weway-language') || 'ar');
+  const [lang, setLangState] = useState(getStoredLanguage);
   const [menu, setMenu] = useState(false);
   const [modal, setModal] = useState(null);
   const [slide, setSlide] = useState(0);
   const ar = lang === 'ar';
   const t = copy[lang];
 
+  const setLang = nextLanguage => {
+    const language = SUPPORTED_LANGUAGES.includes(nextLanguage) ? nextLanguage : DEFAULT_LANGUAGE;
+
+    localStorage.setItem(LANGUAGE_KEY, language);
+    setLangState(language);
+  };
+
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = ar ? 'rtl' : 'ltr';
-    localStorage.setItem('weway-language', lang);
+    localStorage.setItem(LANGUAGE_KEY, lang);
   }, [lang, ar]);
 
   useEffect(() => {
