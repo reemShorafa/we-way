@@ -11,10 +11,10 @@ import {
   Users,
 } from "lucide-react";
 
-import saudiTrip from "../img/trips/saudi-trip.png";
-import turkeyTrip from "../img/trips/turkey-trip.jfif";
-import dubaiTrip from "../img/trips/dubai-trip.jfif";
-import parisTrip from "../img/trips/paris-trip.jfif";
+import saudiTrip from "../img/trips/saudi-trip.webp";
+import turkeyTrip from "../img/trips/turkey-trip.webp";
+import dubaiTrip from "../img/trips/dubai-trip.webp";
+import parisTrip from "../img/trips/paris-trip.webp";
 
 export const copy = {
   ar: {
@@ -77,6 +77,7 @@ export const features = [
     arText:
       "كن على اتصال دائم مع أصدقائك وتعرف على مواقعهم لحظة بلحظة مع رسم مسار مباشر للوصول إليهم بكل سهولة.",
     enTitle: "Live Map Tracking",
+    enText: "See where everyone is in real time, follow the shared route, and reach friends without endless check-ins.",
   },
   {
     Icon: Brain,
@@ -84,6 +85,7 @@ export const features = [
     arText:
       "حدد وجهتك ودع التطبيق يقترح عليك جدول زيارات متكامل لأبرز الأماكن، مع عرض مواقعها على الخريطة وتفاصيلها الشاملة.",
     enTitle: "Smart Trip Plans",
+    enText: "Choose a destination and get a practical itinerary with places, timing, and route context for the whole group.",
   },
   {
     Icon: MessageCircle,
@@ -91,6 +93,7 @@ export const features = [
     arText:
       "مساحة تواصل فورية تجمع أفراد الرحلة لتنسيق الخطوات، تبادل التحديثات، ومشاركة اللحظات أولاً بأول.",
     enTitle: "Trip Group Chat",
+    enText: "Keep decisions, updates, photos, and arrival notes in one trip chat instead of scattered messages.",
   },
   {
     Icon: ShieldCheck,
@@ -98,6 +101,7 @@ export const features = [
     arText:
       "نظام مالي منظم يتيح تعيين مسؤول للمحفظة للتحكم بالميزانية ومتابعة الأمور المالية بسلاسة.",
     enTitle: "Shared Wallet",
+    enText: "Assign a wallet owner, track the shared budget, and keep group spending transparent from day one.",
   },
   {
     Icon: Wallet,
@@ -105,6 +109,7 @@ export const features = [
     arText:
       "تسجيل دقيق لجميع المصروفات بعملة الوجهة، مع حساب آلي يوضح حصة كل فرد وما دفعه بدقة تامة.",
     enTitle: "Expense Management",
+    enText: "Record costs in the destination currency and calculate who paid, who owes, and what remains.",
   },
   {
     Icon: FileText,
@@ -112,6 +117,7 @@ export const features = [
     arText:
       "توثيق متكامل لكافة تفاصيل المحطة والرحلة في تقرير نهائي يجمع إحصائيات وأحداث مغامرتكم.",
     enTitle: "Trip Report",
+    enText: "Wrap up each journey with a clear report of route highlights, activity, costs, and shared memories.",
   },
   {
     Icon: Camera,
@@ -119,6 +125,7 @@ export const features = [
     arText:
       "مساحة مخصصة لرفع وحفظ صور ومقاطع فيديو الرحلة لتخليد أجمل اللحظات في سجل ذكريات مشترك.",
     enTitle: "Shared Memories",
+    enText: "Upload photos and short clips to a shared memory space everyone can revisit after the trip.",
   },
   {
     Icon: Compass,
@@ -126,6 +133,7 @@ export const features = [
     arText:
       "اقتراح ذكي لأبرز المعالم الأثرية، السياحية، التعليمية، والرياضية القريبة من مسارك على الخريطة مع توجيه مباشر للوصول إليها.",
     enTitle: "Discover Places",
+    enText: "Find nearby landmarks, attractions, learning spots, and activities along the route with direct guidance.",
   },
 ];
 
@@ -136,6 +144,7 @@ export const steps = [
     arText:
       "امنح مغامرتك اسماً وصورة تعكس روح الشلة، حدد بدقة مكان التجمع ونقطة اللقاء، وجهّز قائمة مستلزماتك لتنطلقوا بكل جاهزية وترتيب.",
     enTitle: "Name your trip and get ready",
+    enText: "Give the trip a name, choose a cover image, set the meeting point, and prepare the group checklist.",
   },
   {
     Icon: Compass,
@@ -143,6 +152,7 @@ export const steps = [
     arText:
       "حدد مكان وجهتكم بدقة، وادخل تاريخ بدء الوصول وتاريخ المغادرة لتنظيم وقت الرحلة بكل دقة.",
     enTitle: "Set your destination and schedule",
+    enText: "Add the destination, arrival date, and departure date so the plan reflects the trip window.",
   },
   {
     Icon: Users,
@@ -150,6 +160,7 @@ export const steps = [
     arText:
       "أرسل دعواتك للأصدقاء بنقرة واحدة، واجمع فريق الرحلة في مكان واحد لتكونوا على استعداد تام للانطلاق معاً.",
     enTitle: "Invite friends into the adventure",
+    enText: "Send invitations, gather the travel group, and keep everyone ready before the first move.",
   },
   {
     Icon: Wallet,
@@ -157,6 +168,7 @@ export const steps = [
     arText:
       "سجل التكاليف والمشتريات الأولية بعملة وجهتكم بدقة قبل بدء الرحلة لتبدأوا حساباتكم بشكل منظم وواضح.",
     enTitle: "Add pre-trip expenses",
+    enText: "Log bookings, purchases, and early costs before departure so the budget starts clean.",
   },
   {
     Icon: Brain,
@@ -164,6 +176,7 @@ export const steps = [
     arText:
       "دع الذكاء الاصطناعي يصمم لك خطة زيارات متكاملة ومخصصة خصيصاً لأفضل الأماكن والأنشطة داخل وجهتكم بكل سهولة.",
     enTitle: "An AI-made itinerary",
+    enText: "Let WeWay suggest a personalized visit plan with the best places and activities in your destination.",
   },
 ];
 

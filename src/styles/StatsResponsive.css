@@ -1,0 +1,72 @@
+/* Keep the three statistics compact on narrow screens. */
+@media (max-width: 620px) {
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 28px 10px;
+  }
+
+  .stats div {
+    min-height: 112px;
+    gap: 6px;
+    padding: 14px 6px;
+    border-radius: 13px;
+  }
+
+  .stats svg {
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    border-radius: 11px;
+  }
+
+  .stats b {
+    font-size: clamp(1.15rem, 6vw, 1.55rem);
+    line-height: 1;
+  }
+
+  .stats span {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .site-footer .footer-bottom {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    justify-items: center !important;
+  }
+
+  .site-footer .footer-bottom small,
+  .site-footer .footer-bottom span {
+    justify-self: center !important;
+    text-align: center !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .steps-mosaic {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    justify-items: center !important;
+  }
+
+  .step-card,
+  .step-card:nth-child(-n + 5) {
+    aspect-ratio: 312 / 560 !important;
+    grid-column: 1 / -1 !important;
+    width: min(100%, 320px) !important;
+  }
+
+  .site-footer .footer-bottom {
+    justify-items: center !important;
+  }
+
+  .site-footer .footer-bottom small,
+  .site-footer .footer-bottom span {
+    justify-self: center !important;
+    text-align: center !important;
+  }
+}

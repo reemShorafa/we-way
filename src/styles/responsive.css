@@ -1,0 +1,232 @@
+@media (max-width: 900px) {
+  .links,
+  .navcta {
+    display: none;
+  }
+
+  .hamb {
+    display: grid;
+    place-items: center;
+  }
+
+  .mobile {
+    display: flex;
+    max-width: 1180px;
+    margin: 9px auto;
+    padding: 12px;
+    gap: 4px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    flex-direction: column;
+  }
+
+  .mobile button:not(.button) {
+    border: 0;
+    background: none;
+    text-align: start;
+    padding: 10px;
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .featureGrid,
+  .tripGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .memory {
+    gap: 40px;
+  }
+
+  .cta {
+    margin-inline: 28px;
+  }
+
+  .routeBadge {
+    width: 170px;
+    height: 170px;
+    flex: none;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .head h2,
+  .memory h2,
+  .partners h2,
+  .contact-inner h2 {
+    padding-bottom: 0;
+  }
+
+  .head h2::after,
+  .memory h2::after,
+  .partners h2::after,
+  .contact-inner h2::after {
+    display: none;
+  }
+
+  header {
+    padding: 0 12px;
+    top: 7px;
+  }
+
+  nav {
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .brand img {
+    height: 35px;
+    width: auto;
+  }
+
+  .section {
+    padding: 70px 19px;
+  }
+
+  .hero {
+    padding-top: 60px;
+    gap: 32px;
+  }
+
+  .hero p,
+  .head p,
+  .memory p {
+    font-size: 14px;
+  }
+
+  .map {
+    min-height: 330px;
+    border-radius: 20px;
+  }
+
+  .pin i {
+    width: 33px;
+    height: 33px;
+    font-size: 10px;
+  }
+
+  .pin b,
+  .note {
+    font-size: 9px;
+  }
+
+  .note {
+    padding: 7px;
+  }
+
+  .featureGrid,
+  .tripGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    min-height: 0;
+  }
+
+  .timeline:before {
+    inset-inline-start: 19px;
+  }
+
+  .step,
+  .step.rev {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    min-height: 0;
+    padding: 0 0 45px 37px;
+  }
+
+  .step.rev > div:first-child {
+    order: 0;
+  }
+
+  .phone {
+    justify-self: start;
+    width: 215px;
+    height: 280px;
+  }
+
+  .stats {
+    padding: 40px 10px;
+    gap: 4px;
+  }
+
+  .stats span {
+    font-size: 11px;
+  }
+
+  .stats b {
+    font-size: 2.1rem;
+  }
+
+  .memory {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    order: 2;
+  }
+
+  .photo img {
+    height: 330px;
+  }
+
+  .review {
+    gap: 10px;
+  }
+
+  .review > button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .review article {
+    width: calc(100% - 88px);
+    padding: 21px 12px;
+  }
+
+  .review blockquote {
+    font-size: 16px;
+  }
+
+  .cta {
+    display: block;
+    margin: 0 19px 55px;
+    padding: 50px 23px;
+  }
+
+  .routeBadge {
+    display: none;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  footer > div:last-child {
+    flex-direction: row;
+  }
+
+  footer small {
+    grid-column: auto;
+  }
+
+  .modal > img {
+    height: 175px;
+  }
+
+  .reveal {
+    transform: translateY(18px);
+  }
+}

@@ -13,7 +13,7 @@ import {
   Smartphone,
 } from "lucide-react";
 
-import logo from "../img/logo.png";
+import logo from "../img/logo.webp";
 import { navTargets } from "../data/siteData";
 
 export default function Footer({ ar, t, go }) {

@@ -1,0 +1,151 @@
+
+.head.center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.head h2,
+.memory h2 {
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.head h2::after,
+.memory h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 138px;
+  height: 24px;
+  border-top: 4px solid var(--text);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+#features > .head {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+#trips > .head {
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+#trips > .head h2,
+#trips > .head p {
+  margin-inline: auto;
+}
+
+#trips > .head h2 {
+  max-width: 680px;
+}
+
+#features > .head h2 {
+  max-width: 680px;
+  margin: 14px auto 18px;
+  font-size: clamp(1.65rem, 2.3vw, 2.35rem);
+  line-height: 1.28;
+  font-weight: 800;
+}
+
+#features > .head p {
+  max-width: 620px;
+  margin-inline: auto;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.85;
+}
+
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.feature {
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--secondary-dark);
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  transition: transform 0.25s, box-shadow 0.25s, color 0.25s;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  background: var(--primary);
+  border-color: var(--primary-dark);
+}
+
+.feature > i {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--secondary-dark);
+  font-style: normal;
+  line-height: 1;
+}
+
+.feature:nth-child(3n) > i {
+  color: var(--secondary-dark);
+  background: var(--white);
+}
+
+.feature h3 {
+  font-size: 15px;
+  margin: 18px 0 8px;
+  color: var(--white);
+  transition: color 0.25s;
+}
+
+.feature p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--white);
+  opacity: 0.9;
+  transition: color 0.25s, opacity 0.25s;
+}
+
+.feature > b {
+  height: 4px;
+  background: var(--primary);
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  transform: scaleX(0);
+  transition: 0.25s;
+}
+
+.feature:hover > b {
+  transform: scaleX(1);
+}
+
+.feature:hover h3,
+.feature:hover p {
+  color: var(--white);
+  opacity: 1;
+}
+
+.feature:hover > i,
+.feature:hover:nth-child(3n) > i {
+  background: transparent;
+  color: var(--white);
+  outline: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.feature:hover > b {
+  background: var(--white);
+}

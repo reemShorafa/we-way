@@ -1,5 +1,5 @@
 import { Download, Globe2, Menu, X } from 'lucide-react';
-import logo from '../img/logo.png';
+import logo from '../img/logo.webp';
 import { navTargets } from '../data/siteData';
 
 export default function Header({ ar, t, menu, setMenu, setLang, go }) {

@@ -11,7 +11,7 @@ function HeroTitle({ value }) {
   ));
 }
 
-export default function Hero({ t, go }) {
+export default function Hero({ ar, t, go }) {
   return (
     <section className="hero section" id="home">
       <div>
@@ -26,7 +26,7 @@ export default function Hero({ t, go }) {
         </div>
       </div>
 
-      <GlobeTripMap />
+      <GlobeTripMap ar={ar} />
     </section>
   );
 }

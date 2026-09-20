@@ -1,0 +1,54 @@
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 58px;
+  padding: 82px max(28px, calc((100vw - 1100px) / 2));
+  text-align: center;
+  background: var(--secondary-dark);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats div {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  min-height: 210px;
+  padding: 36px 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(13, 62, 33, 0.28);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stats div:hover {
+  transform: scale(1.055);
+  background: var(--primary);
+  box-shadow: 0 24px 52px rgba(10, 45, 80, 0.34);
+}
+
+.stats svg {
+  color: var(--secondary);
+  background: #e9f8ef;
+  width: 60px;
+  height: 60px;
+  padding: 14px;
+  border-radius: 18px;
+  box-shadow: 0 12px 25px #16753c24;
+}
+
+.stats b {
+  display: block;
+  font-size: clamp(2.7rem, 4.8vw, 4.35rem);
+  line-height: 1;
+  text-shadow: 0 8px 22px #2675c740;
+}
+
+.stats span {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+}

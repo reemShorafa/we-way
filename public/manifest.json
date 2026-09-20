@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "WeWay",
+  "name": "WeWay - Group Trip Planner",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "description": "Plan group trips, track friends on the map, manage shared expenses, and save travel memories with WeWay.",
+  "theme_color": "#2675c7",
+  "background_color": "#f5f8fb"
 }

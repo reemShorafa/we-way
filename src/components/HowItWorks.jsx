@@ -23,9 +23,7 @@ export default function HowItWorks({ ar, t }) {
           {steps.map((step, index) => {
             const Icon = step.Icon;
             const title = ar ? step.arTitle : step.enTitle;
-            const description = ar
-              ? step.arText
-              : 'Organize the details in minutes and get everyone ready for a smooth, enjoyable journey.';
+            const description = ar ? step.arText : step.enText;
 
             return (
               <article className="step-card" key={step.enTitle}>

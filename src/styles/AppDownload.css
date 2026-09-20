@@ -1,0 +1,185 @@
+/* Application download */
+.app-download {
+  display: grid;
+  grid-template-columns: minmax(260px, .75fr) minmax(360px, 1.15fr);
+  align-items: center;
+  direction: ltr;
+  gap: clamp(42px, 8vw, 126px);
+  max-width: 1240px;
+  min-height: 570px;
+  margin: 72px auto;
+  padding: 58px clamp(34px, 7vw, 100px);
+  overflow: hidden;
+  border: 1px solid rgba(164, 235, 190, .3);
+  border-radius: 42px;
+  background: linear-gradient(125deg, #16753c 0%, #26a65a 54%, #43be73 100%);
+  box-shadow: 0 24px 60px rgba(22, 117, 60, .2);
+  color: #fff;
+}
+
+.app-download-phone {
+  display: grid;
+  place-items: center;
+}
+
+.app-download-device {
+  position: relative;
+  width: min(100%, 245px);
+  aspect-ratio: 430 / 860;
+  padding: 9px;
+  overflow: hidden;
+  border: 5px solid #10251c;
+  outline: 2px solid rgba(134, 218, 165, .48);
+  outline-offset: 3px;
+  border-radius: 38px;
+  background: #10251c;
+  box-shadow: 0 24px 34px rgba(0, 0, 0, .42), inset 0 0 0 1px rgba(255, 255, 255, .14);
+}
+
+.app-download-device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 26px;
+}
+
+.app-download-speaker {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 50%;
+  width: 31%;
+  height: 17px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #071711;
+}
+
+.app-download-copy {
+  max-width: 530px;
+  text-align: right;
+  direction: rtl;
+}
+
+.app-download-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #9ce0b1;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.app-download h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 3.3vw, 3.35rem);
+  line-height: 1.3;
+}
+
+.app-download h2 em {
+  color: #fff;
+  font-style: normal;
+}
+
+.app-download-copy > p {
+  max-width: 500px;
+  margin: 19px 0 28px;
+  color: rgba(255, 255, 255, .73);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.app-download-label {
+  display: block;
+  margin-bottom: 13px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.app-download-stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-store-button {
+  display: inline-flex;
+  min-width: 171px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.app-store-button:hover {
+  transform: translateY(-3px);
+  border-color: #42b9ef;
+  background: #1976c9;
+}
+
+.app-store-button span {
+  display: grid;
+  gap: 1px;
+  text-align: left;
+  direction: ltr;
+}
+
+.app-store-button small { font-size: 10px; opacity: .74; }
+.app-store-button b { font-size: 15px; line-height: 1.15; }
+
+.app-download-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, .55);
+  font-size: 12px;
+}
+
+html[dir="ltr"] .app-download-copy { text-align: left; direction: ltr; }
+
+@media (max-width: 760px) {
+  .app-download {
+    grid-template-columns: 1fr;
+    gap: 31px;
+    min-height: auto;
+    margin: 48px 16px;
+    padding: 42px 24px 38px;
+    border-radius: 26px;
+  }
+
+  .app-download-device { width: 178px; }
+  .app-download-copy { max-width: none; text-align: center; }
+  .app-download-tag { margin-bottom: 10px; font-size: 13px; }
+  .app-download h2 { font-size: 1.82rem; }
+  .app-download-copy > p { margin: 14px auto 23px; font-size: 14px; line-height: 1.8; }
+  .app-download-label { margin-bottom: 11px; font-size: 13px; }
+  .app-download-stores { justify-content: center; gap: 9px; }
+  .app-store-button { min-width: 142px; padding: 10px 11px; border-radius: 13px; }
+  .app-store-button b { font-size: 13px; }
+  .app-download-note { justify-content: center; margin-top: 14px; font-size: 10px; }
+  html[dir="ltr"] .app-download-copy { text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,218 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 50px;
+  align-items: center;
+  min-height: 640px;
+  padding-top: 85px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--secondary-dark);
+  font-size: clamp(1.1rem, 1.45vw, 1.3rem);
+  font-weight: 800;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.2;
+  max-width: 660px;
+  margin: 18px 0;
+}
+
+h2 {
+  font-size: clamp(1.65rem, 2.3vw, 2.35rem);
+  line-height: 1.25;
+  margin: 15px 0;
+}
+
+.hero p,
+.head p,
+.memory p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.motto {
+  font-weight: 800;
+  color: var(--primary-dark) !important;
+}
+
+.plain {
+  border: 0;
+  background: none;
+  color: var(--primary-dark);
+  font-weight: 800;
+  padding: 12px;
+}
+
+.friends {
+  margin-top: 32px;
+}
+
+.friends span {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.map {
+  position: relative;
+  min-height: 465px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: repeating-linear-gradient(0deg, #fff8 0 1px, transparent 1px 35px),
+    repeating-linear-gradient(90deg, #fff8 0 1px, transparent 1px 35px), #e8f5eb;
+  border: 1px solid #cce1d2;
+  box-shadow: var(--shadow-md);
+}
+
+.map > svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.road {
+  fill: none;
+  stroke: #b6cec1;
+  stroke-width: 15;
+  stroke-linecap: round;
+}
+
+.route {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 9 13;
+  animation: dash 8s linear infinite;
+}
+
+.dot {
+  fill: var(--secondary);
+  stroke: white;
+  stroke-width: 4;
+}
+
+.pin {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.pin i {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--primary);
+  font-style: normal;
+  font-weight: 800;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.pin b,
+.note {
+  font-size: 11px;
+  background: white;
+  border-radius: 7px;
+  padding: 3px 7px;
+  box-shadow: var(--shadow-sm);
+}
+
+.p0 {
+  inset-inline-start: 13%;
+  top: 62%;
+}
+
+.p1 {
+  inset-inline-start: 35%;
+  top: 40%;
+  animation-delay: -1s;
+}
+
+.p2 {
+  inset-inline-start: 55%;
+  top: 58%;
+  animation-delay: -2s;
+}
+
+.p3 {
+  inset-inline-start: 74%;
+  top: 31%;
+  animation-delay: -0.5s;
+}
+
+.dest {
+  position: absolute;
+  inset-inline-end: 7%;
+  top: 17%;
+  color: var(--secondary);
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  animation: pulse 2.5s infinite;
+}
+
+.dest small {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  background: white;
+  padding: 4px 7px;
+  border-radius: 7px;
+}
+
+.dest > svg {
+  position: static;
+  width: 28px;
+  height: 28px;
+}
+
+.note {
+  position: absolute;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.note svg {
+  position: static;
+  width: 14px;
+  height: 14px;
+  color: var(--secondary);
+}
+
+.n1 {
+  inset-inline-start: 10%;
+  top: 15%;
+}
+
+.n2 {
+  inset-inline-end: 10%;
+  bottom: 12%;
+}
+
+.head {
+  max-width: 650px;
+  margin-bottom: 45px;
+}

@@ -12,7 +12,7 @@ export default function Features({ ar, t }) {
             <article className="feature" key={feature.enTitle}>
               <i><Icon size={23} /></i>
               <h3>{ar ? feature.arTitle : feature.enTitle}</h3>
-              <p>{ar ? feature.arText : 'Everything you need to organize your trip with clarity and shared delight.'}</p>
+              <p>{ar ? feature.arText : feature.enText}</p>
               <b />
             </article>
           );

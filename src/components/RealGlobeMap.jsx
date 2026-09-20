@@ -3,9 +3,24 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const stops = [
-  { coordinates: [31.520, 34.805], label: 'نقطة التجمع', kind: 'start' },
-  { coordinates: [31.546, 34.863], label: 'استراحة', kind: 'stop' },
-  { coordinates: [31.586, 34.930], label: 'الوجهة', kind: 'finish' },
+  {
+    coordinates: [31.520, 34.805],
+    arLabel: 'نقطة التجمع',
+    enLabel: 'Meeting point',
+    kind: 'start',
+  },
+  {
+    coordinates: [31.546, 34.863],
+    arLabel: 'استراحة',
+    enLabel: 'Rest stop',
+    kind: 'stop',
+  },
+  {
+    coordinates: [31.586, 34.930],
+    arLabel: 'الوجهة',
+    enLabel: 'Destination',
+    kind: 'finish',
+  },
 ];
 
 const route = [
@@ -26,7 +41,7 @@ const markerIcon = kind => L.divIcon({
   tooltipAnchor: [0, 7],
 });
 
-export default function RealGlobeMap() {
+export default function RealGlobeMap({ ar }) {
   const mapElement = useRef(null);
   const mapInstance = useRef(null);
 
@@ -35,14 +50,13 @@ export default function RealGlobeMap() {
 
     const map = L.map(mapElement.current, {
       zoomControl: false,
-      attributionControl: false,
       scrollWheelZoom: false,
     }).setView([31.552, 34.868], 12);
     mapInstance.current = map;
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
-      attribution: '© OpenStreetMap contributors',
+      attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
@@ -55,19 +69,23 @@ export default function RealGlobeMap() {
     stops.forEach(stop => {
       L.marker(stop.coordinates, { icon: markerIcon(stop.kind), keyboard: false })
         .addTo(map)
-        .bindTooltip(stop.label, { permanent: true, direction: 'bottom', className: 'weway-map-label' });
+        .bindTooltip(ar ? stop.arLabel : stop.enLabel, {
+          permanent: true,
+          direction: 'bottom',
+          className: 'weway-map-label',
+        });
     });
 
     return () => {
       mapInstance.current = null;
       map.remove();
     };
-  }, []);
+  }, [ar]);
 
   return (
-    <div className="travel-map" aria-label="خريطة مسار رحلة WeWay">
+    <div className="travel-map" aria-label={ar ? 'خريطة مسار رحلة WeWay' : 'WeWay trip route map'}>
       <div ref={mapElement} className="travel-map-canvas" />
-      <div className="map-live"><span />الرحلة مباشرة</div>
+      <div className="map-live"><span />{ar ? 'الرحلة مباشرة' : 'Trip is live'}</div>
     </div>
   );
 }
